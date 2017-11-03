@@ -14,4 +14,10 @@ public class HelloController {
     public String home(@RequestParam String name) {
         return "hi "+name+",i am from port:" +port;
     }
+
+
+    @RequestMapping(value = "/hello")
+    public String hello(@RequestParam String name) {
+        return "hello" + name;
+    }
 }
