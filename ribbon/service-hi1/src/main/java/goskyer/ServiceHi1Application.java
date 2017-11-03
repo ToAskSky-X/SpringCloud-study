@@ -8,11 +8,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan("org.goskyer")
-public class EurekaClientApplication {
+@ComponentScan("goskyer")
+public class ServiceHi1Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientApplication.class);
+        SpringApplication.run(ServiceHi1Application.class);
     }
 
 
