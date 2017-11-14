@@ -3,8 +3,6 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hystrix-service</artifactId>
     <packaging>jar</packaging>
-    <name>hystrix-service Maven Webapp</name>
-
 
     <parent>
         <groupId>org.springframework.boot</groupId>
