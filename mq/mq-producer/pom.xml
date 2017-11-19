@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>mq-producer</artifactId>
+    <artifactId>com.zzq.mq-producer</artifactId>
     <packaging>jar</packaging>
-    <name>mq-producer Maven Webapp</name>
+    <name>com.zzq.mq-producer Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -91,7 +91,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>mq-producer</finalName>
+        <finalName>com.zzq.mq-producer</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
