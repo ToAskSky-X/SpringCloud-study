@@ -40,7 +40,8 @@ public class MyFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        System.out.println(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
+        System.out.println(
+            com.zzq.base.string.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
         Object accessToken = request.getParameter("token");
         if (accessToken == null) {
             System.out.println("token is empty");
