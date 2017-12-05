@@ -3,9 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.goskyer</groupId>
   <artifactId>Hystrix</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
   <modules>
     <module>hystrix-service</module>
+      <module>hystrix-turbiine</module>
   </modules>
 
   <build>
