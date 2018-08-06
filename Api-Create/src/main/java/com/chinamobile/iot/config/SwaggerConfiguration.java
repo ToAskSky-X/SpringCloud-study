@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * Created on 2016/12/29.
  *
- * @author stayfool
+ * @author zhiqin.zhang
  */
 @Configuration
 @EnableSwagger2

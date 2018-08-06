@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan("goskyer")
 public class ServiceHiApplication {
 
     public static void main(String[] args) {

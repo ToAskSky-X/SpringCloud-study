@@ -35,7 +35,6 @@ public class HystrixServiceApplication {
      * @return
      */
     @Bean
-    @LoadBalanced
     RestTemplate restTemplate() {
         return new RestTemplate();
     }

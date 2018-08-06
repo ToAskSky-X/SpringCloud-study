@@ -87,10 +87,10 @@
                         <doctype>book</doctype>
                         <toc>left</toc>
                         <toclevels>3</toclevels>
-                        <numbered></numbered>
+                       <!-- <numbered></numbered>
                         <hardbreaks></hardbreaks>
                         <sectlinks></sectlinks>
-                        <sectanchors></sectanchors>
+                        <sectanchors></sectanchors>-->
                         <generated>${project.build.directory}/asciidoc</generated>
                     </attributes>
                 </configuration>
