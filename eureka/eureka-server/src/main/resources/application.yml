@@ -1,0 +1,18 @@
+eureka:
+  instance:
+    statusPageUrl: https://${eureka.hostname}/info
+    healthCheckUrl: https://${eureka.hostname}/health
+    homePageUrl: https://${eureka.hostname}/
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}:{}
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-local
