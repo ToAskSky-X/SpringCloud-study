@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.sleuth.Tracer;
 import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,9 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 
 public class ServiceHiApplication {
+
+    @Autowired
+    private Tracer tracer;
 
     public static void main(String[] args) {
         SpringApplication.run(ServiceHiApplication.class, args);
@@ -43,13 +47,13 @@ public class ServiceHiApplication {
 
     @RequestMapping("/info")
     public String info() {
-        LOG.info("calling trace service-hi ");
+        LOG.info("teaceId:" + tracer.getCurrentSpan().traceIdString() + "hi is being called");
         return "i'm service-hi";
 
     }
 
-    @Bean
+    /*@Bean
     public AlwaysSampler defaultSampler() {
         return new AlwaysSampler();
-    }
+    }*/
 }
