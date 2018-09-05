@@ -1,4 +1,4 @@
-package org.goskyer;
+package org.goskyer.spring;
 
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;

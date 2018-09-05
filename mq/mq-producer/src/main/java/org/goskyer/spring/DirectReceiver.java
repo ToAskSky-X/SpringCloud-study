@@ -1,4 +1,4 @@
-package org.goskyer;
+package org.goskyer.spring;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -7,14 +7,15 @@ import org.springframework.stereotype.Component;
 /**
  * @description: 消息消费者
  * @author: monster_x
- * @create: 2018-08-31 17:41
+ * @create: 2018-08-31 17:42
  **/
 @Component
-@RabbitListener(queues = "hello")
-public class HelloReceiver {
+@RabbitListener(queues = "direct")
+public class DirectReceiver {
 
     @RabbitHandler
     public void process(String message) {
-        System.out.println("接收者 helloReceiver," + message);
+        System.out.println("接收者 DirectReceiver," + message);
     }
 }
+
