@@ -21,8 +21,8 @@ public class TopicSend {
         // 声明exchange
         channel.exchangeDeclare(EXCHANGE_NAME, "topic");
         // 消息内容
-        String message = "删除商品，id = 2222";
-        channel.basicPublish(EXCHANGE_NAME, "item.delete", null, message.getBytes());
+        String message = "message";
+        channel.basicPublish(EXCHANGE_NAME, "item.broadcast", null, message.getBytes());
         System.out.println(" [x] Sent '" + message + "'");
         channel.close();
         connection.close();
