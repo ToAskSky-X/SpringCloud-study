@@ -1,0 +1,14 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: logback
+#  output:
+#    ansi:
+#      enabled: detect
+
+logging:
+  file: ./logback.log
+  level: info
+  path: ./logs
