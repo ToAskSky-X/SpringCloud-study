@@ -13,7 +13,7 @@ import java.util.concurrent.TimeoutException;
  **/
 public class ConsumerDemo {
 
-    public static final String HELLO_EXCHANGE = "test_exchange_fanout";
+    private static final String HELLO_EXCHANGE = "test_exchange_fanout";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         Connection connection = RabbitMqConnectionUtil.getConnection();
@@ -24,7 +24,7 @@ public class ConsumerDemo {
         //声明队列
         String queueName = channel.queueDeclare().getQueue();
         String routingKey = "TEST";
-        //绑定队列，通过键 hola 将队列和交换器绑定起来
+        //绑定队列，通过键 hello 将队列和交换器绑定起来
         channel.queueBind(queueName, HELLO_EXCHANGE, routingKey);
 
         channel.queueDeclare("hello", false, false, false, null);
@@ -39,11 +39,11 @@ public class ConsumerDemo {
                 System.out.println(" [x] Received '" + message + "'");
             }
         };
-        //channel.basicConsume("hello", true, consumer);
+        channel.basicConsume("hello", true, consumer);
         //消费消息
         boolean autoAck = false;
         String consumerTag = "";
-        channel.basicConsume(queueName, autoAck, consumerTag, new DefaultConsumer(channel) {
+        /*channel.basicConsume(queueName, autoAck, consumerTag, new DefaultConsumer(channel) {
             @Override
             public void handleDelivery(String consumerTag,
                                        Envelope envelope,
@@ -60,6 +60,6 @@ public class ConsumerDemo {
                 String bodyStr = new String(body, "UTF-8");
                 System.out.println(bodyStr);
             }
-        });
+        });*/
     }
 }
