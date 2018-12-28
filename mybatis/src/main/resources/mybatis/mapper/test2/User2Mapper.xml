@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.goskyer.mapper.test2.User2Mapper">
+  <resultMap id="BaseResultMap" type="org.goskyer.entity.User">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+  <insert id="insert" parameterType="org.goskyer.entity.User">
+    insert into t_user (name)
+    values (#{name,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name
+    from t_user
+  </select>
+</mapper>

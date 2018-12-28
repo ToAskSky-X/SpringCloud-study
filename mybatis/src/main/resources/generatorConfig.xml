@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <!-- java 文件编码格式  -->
+            <property name="javaFileEncoding" value="utf-8"/>
+        </commentGenerator>
+
+        <!-- jdbc 连接信息  -->
+        <jdbcConnection driverClass="${driverClass}"
+                        connectionURL="${connectionURL}"
+                        userId="${userId}"
+                        password="${password}">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 实体类所在包名 -->
+        <javaModelGenerator targetPackage="${modelPackage}" targetProject="${src_main_java}">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- xml 所在包名 -->
+        <sqlMapGenerator targetPackage="${sqlMapperPackage}" targetProject="${src_main_resources}">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- mapper 所在包名 -->
+        <javaClientGenerator targetPackage="${mapperPackage}" targetProject="${src_main_java}" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!-- 要生成的表 -->
+        <!-- 这里的百分号代表对该数据库中所有的表进行生成 -->
+        <table tableName="t_user"
+               domainObjectName="User" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <!--  tableName为对应的数据库表 domainObjectName是要生成的实体类名 enable*ByExample
+                是否生成 example类   -->
+
+            <!-- 忽略列，不生成bean 字段 -->
+            <ignoreColumn column="FRED"/>
+            <!-- 指定列的java数据类型 -->
+            <!--
+            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+             -->
+        </table>
+
+    </context>
+</generatorConfiguration>
